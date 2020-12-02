@@ -4,12 +4,13 @@ from random import randint
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget, QApplication
 from PyQt5.QtGui import QPainter, QColor, QBrush, QPen
+from ui import Ui_Form
 
 
-class Second(QWidget):
+class Second(QWidget, Ui_Form):
     def __init__(self):
-        super(Second, self).__init__()
-        uic.loadUi("UI.ui", self)
+        super().__init__()
+        self.setupUi(self)
         self.flag = False
         self.circles = []
         self.pushButton.clicked.connect(self.click)
